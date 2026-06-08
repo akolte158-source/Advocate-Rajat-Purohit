@@ -76,11 +76,11 @@ const AboutPage = () => {
               </div>
               <div className="rounded-2xl bg-white/5 p-6">
                 <h3 className="mb-2 text-xl font-semibold text-white">Email</h3>
-                <p className="text-gray-300">info@advocaterajatpurohit.com</p>
+                <p className="text-gray-300">advrajatpurohit@gmail.com </p>
               </div>
               <div className="rounded-2xl bg-white/5 p-6">
                 <h3 className="mb-2 text-xl font-semibold text-white">Office</h3>
-                <p className="text-gray-300">Rajasthan High Court, Jodhpur, Rajasthan</p>
+                <p className="text-gray-300">29, Radha Krishna vihar, Govindpura, Jaipur 302044 Rajasthan</p>
               </div>
             </div>
           </div>

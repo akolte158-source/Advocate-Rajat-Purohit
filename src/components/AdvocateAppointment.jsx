@@ -8,7 +8,7 @@ import {
   ChevronDown,
   Briefcase,
 } from "lucide-react";
-import lawyer from "../assets/lawyer.jpeg";
+import lawyer from "../assets/lawyer3.jpeg";
 
 export default function AdvocateAppointment() {
   const [formData, setFormData] = useState({

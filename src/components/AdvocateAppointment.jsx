@@ -32,7 +32,7 @@ export default function AdvocateAppointment() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/appointment",
+        "https://advocate-rajat-purohit-server.onrender.com/api/appointment",
         {
           method: "POST",
           headers: {

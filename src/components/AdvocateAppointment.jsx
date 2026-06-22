@@ -9,7 +9,6 @@ import {
   Briefcase,
 } from "lucide-react";
 import lawyer from "../assets/lawyer3.jpeg";
-
 export default function AdvocateAppointment() {
   const [formData, setFormData] = useState({
     name: "",
@@ -29,38 +28,44 @@ export default function AdvocateAppointment() {
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  try {
-    const response = await fetch(
-      `${import.meta.env.VITE_API_URL}/api/appointment`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+    try {
+      const response = await fetch(
+        "http://localhost:5000/api/appointment",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => null);
+        throw new Error(errorData?.message || "Appointment request failed");
       }
-    );
 
-    const data = await response.json();
+      const data = await response.json();
 
-    if (data.success) {
-      alert("Appointment Sent Successfully");
-      setFormData({
-        name: "",
-        phone: "",
-        email: "",
-        caseType: "",
-        date: "",
-        time: "",
-        details: "",
-      });
+      if (data.success) {
+        alert("Appointment Sent Successfully");
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          caseType: "",
+          date: "",
+          time: "",
+          details: "",
+        });
+      }
+    } catch (error) {
+      console.log(error);
+      alert(error.message || "Unable to submit appointment");
     }
-  } catch (error) {
-    console.log(error);
-  }
-};
+  };
 
   return (
     <section className="bg-[#071224] py-20 px-4">

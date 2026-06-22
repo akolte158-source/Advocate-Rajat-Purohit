@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "server": "node server.js",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -17,7 +18,10 @@
     "react-icons": "^5.6.0",
     "react-router-dom": "^7.17.0",
     "swiper": "^12.2.0",
-    "tailwindcss": "^4.3.0"
+    "tailwindcss": "^4.3.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.4",
+    "body-parser": "^1.20.2"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
